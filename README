@@ -3,7 +3,7 @@ NAME
     charlatans
 
 VERSION
-    0.01
+    0.02
 
 SYNOPSIS
       use RDF::Trine::Shortcuts;
@@ -50,7 +50,8 @@ DESCRIPTION
 
         Other named arguments include 'model' to provide an existing
         RDF::Trine::Model to add statements to; and 'context' for providing
-        a context/graph URI.
+        a context/graph URI (which may be a string, URI object or
+        RDF::Trine::Node).
 
     "rdf_string($model, $format)"
         Serialises an RDF::Trine::Model to a string.

@@ -21,6 +21,31 @@
     <revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.01</revision>
     <rdfs:label xml:lang="en">first release</rdfs:label>
   </Version>
+  <Version rdf:about="http://search.cpan.org/dist/RDF-Trine-Shortcuts/#v_0_02">
+    <dcs:changeset>
+      <rdf:Description>
+        <dcs:item>
+          <dcs:Bugfix>
+            <rdfs:label xml:lang="en">Don't break contexts in rdf_parse.</rdfs:label>
+          </dcs:Bugfix>
+        </dcs:item>
+        <dcs:item>
+          <dcs:Bugfix>
+            <rdfs:label xml:lang="en">rdf_parse should take more than just the first statement from a stream.</rdfs:label>
+          </dcs:Bugfix>
+        </dcs:item>
+        <dcs:item>
+          <dcs:Addition>
+            <rdfs:label xml:lang="en">Allow rdf_parse to take an RDF::Trine::Model as input.</rdfs:label>
+          </dcs:Addition>
+        </dcs:item>
+        <dcs:versus rdf:resource="http://search.cpan.org/dist/RDF-Trine-Shortcuts/#v_0_01"/>
+      </rdf:Description>
+    </dcs:changeset>
+    <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-01-22</dc:issued>
+    <file-release rdf:resource="http://backpan.perl.org/authors/id/T/TO/TOBYINK/RDF-Trine-Shortcuts-0.02.tar.gz"/>
+    <revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.02</revision>
+  </Version>
   <Project rdf:about="http://search.cpan.org/dist/RDF-Trine-Shortcuts/#project">
     <bug-database rdf:resource="http://rt.cpan.org/Dist/Display.html?Queue=RDF-Trine-Shortcuts"/>
     <created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-01-20</created>
@@ -33,12 +58,13 @@
     <name>RDF-Trine-Shortcuts</name>
     <programming-language>Perl</programming-language>
     <release rdf:resource="http://search.cpan.org/dist/RDF-Trine-Shortcuts/#v_0_01"/>
+    <release rdf:resource="http://search.cpan.org/dist/RDF-Trine-Shortcuts/#v_0_02"/>
     <repository>
       <SVNRepository>
         <browse rdf:resource="http://goddamn.co.uk/viewvc/perlmods/RDF-Trine-Shortcuts/"/>
       </SVNRepository>
     </repository>
-    <shortdesc xml:lang="en">Example Project</shortdesc>
+    <shortdesc xml:lang="en">totally unauthorised module for cheats and charlatans</shortdesc>
     <tester rdf:resource="http://tobyinkster.co.uk/#i"/>
   </Project>
   <foaf:Person rdf:about="http://tobyinkster.co.uk/#i">

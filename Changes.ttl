@@ -28,13 +28,27 @@ my:v_0_01
 	:file-release   <http://backpan.perl.org/authors/id/T/TO/TOBYINK/RDF-Trine-Shortcuts-0.01.tar.gz> ;
 	rdfs:label      "first release"@en .
 
+my:v_0_02
+
+	a               :Version ;
+	dc:issued       "2010-01-22"^^xsd:date ;
+	:revision       "0.02"^^xsd:string ;
+	:file-release   <http://backpan.perl.org/authors/id/T/TO/TOBYINK/RDF-Trine-Shortcuts-0.02.tar.gz> ;
+	dcs:changeset [
+			dcs:versus my:v_0_01 ;
+			dcs:item
+				[ rdfs:label "Don't break contexts in rdf_parse."@en ; a dcs:Bugfix ] ,
+				[ rdfs:label "rdf_parse should take more than just the first statement from a stream."@en ; a dcs:Bugfix ] ,
+				[ rdfs:label "Allow rdf_parse to take an RDF::Trine::Model as input."@en ; a dcs:Addition ]
+		] .
+
 #############################################################
 
 my:project
 
 	a               :Project ;
 	:name           "RDF-Trine-Shortcuts" ;
-	:shortdesc      "Example Project"@en ;
+	:shortdesc      "totally unauthorised module for cheats and charlatans"@en ;
 	:programming-language  "Perl" ;
 	:homepage       <http://search.cpan.org/dist/RDF-Trine-Shortcuts/> ;
 	:download-page  <http://search.cpan.org/dist/RDF-Trine-Shortcuts/> ;
@@ -46,7 +60,7 @@ my:project
 	:tester         toby:i ;
 	:created        "2010-01-20"^^xsd:date ;
 	:license        <http://dev.perl.org/licenses/> ;
-	:release        my:v_0_01 .
+	:release        my:v_0_01 , my:v_0_02 .
 
 #############################################################
 

@@ -6,7 +6,7 @@ RDF::Trine::Shortcuts - totally unauthorised module for cheats and charlatans
 
 =head1 VERSION
 
-0.01
+0.02
 
 =head1 SYNOPSIS
 
@@ -39,7 +39,7 @@ use URI::file;
 
 our @ISA     = qw(Exporter);
 our @EXPORT  = qw(rdf_parse rdf_string rdf_query);
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 =head1 DESCRIPTION
 
@@ -73,7 +73,7 @@ references; and 'type', which indicates the media type of the input
 
 Other named arguments include 'model' to provide an existing 
 L<RDF::Trine::Model> to add statements to; and 'context' for providing a 
-context/graph URI.
+context/graph URI (which may be a string, URI object or RDF::Trine::Node).
 
 =cut
 
@@ -104,6 +104,11 @@ sub rdf_parse
 	{
 		$context = RDF::Trine::Node::Resource->new("$context");
 	}
+	
+	if (UNIVERSAL::isa($input, 'RDF::Trine::Model'))
+	{
+		$input = $input->as_stream;
+	}
 
 	if (UNIVERSAL::isa($input, 'RDF::Trine::Iterator')
 	and $input->is_graph)
@@ -111,8 +116,8 @@ sub rdf_parse
 		while (my $st = $input->next)
 		{
 			$model->add_statement($st, $context);
-			return $model;
 		}
+		return $model;
 	}
 
 	if (ref $input eq 'HASH')
@@ -191,7 +196,7 @@ sub rdf_parse
 
 	if (defined $context)
 	{
-		$parser->parse_into_model($base, $input, $model, context=>"$context");
+		$parser->parse_into_model($base, $input, $model, context=>$context);
 	}
 	else
 	{
